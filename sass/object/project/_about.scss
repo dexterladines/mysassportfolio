@@ -1,0 +1,45 @@
+
+@use "./../../foundation/system" as s;
+
+.p-about {
+	&__figure {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+	}
+	&__image {
+		flex: 0.5;
+		width: 360px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+	&__figcaption {
+		flex: 1;
+		h3 {
+			font-weight: 700;
+		}
+		p {
+			margin-top: 20px;
+		}
+	}
+	&__links {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 16px;
+		margin-top: 20px;
+	}
+	&__link {
+		width: 40px;
+		background-color: s.$c-body;
+		border-radius: 50%;
+	}
+	@include s.breakpoint(mobile) {
+	}
+	@include s.breakpoint(tablet) {
+	}
+	@include s.breakpoint(pc) {
+	}
+}

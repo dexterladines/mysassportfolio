@@ -1,0 +1,48 @@
+
+$c-base: #EEEDE7;
+$c-base-sub: #222;
+$c-base-dark: #000; 
+$c-base-right: #999;
+$c-body: #fff;
+$c-accent: #ca6060;
+
+$transition-base: all 0.4s;
+
+
+@mixin garamond($weight: bold) {
+	font-family: "Cormorant Garamond", serif;
+	font-weight: $weight;
+}
+
+// responsive system
+// ---------------------
+@mixin breakpoint($point) {
+	@if $point == mobile {
+		@media (min-width: 320px){
+			@content;
+		}
+	}
+	@if $point == tablet {
+		@media (min-width: 640px) {
+			@content;
+		}
+	}
+	@if $point == pc {
+		@media (min-width: 890px) {
+			@content;
+		}
+	}
+}
+
+.pc-only {
+	display: none;
+}
+@include breakpoint(mobile) {
+}
+@include breakpoint(tablet) {
+}
+@include breakpoint(pc) {
+	.pc-only {
+		display: inline-block;
+	}
+}
